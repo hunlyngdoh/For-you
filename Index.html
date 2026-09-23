@@ -1,0 +1,1150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<title>Lulu Proposal 💗</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=DM+Serif+Display&display=swap');
+
+* {
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html, body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    background: #12040d;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+/* =========================
+   MAIN WORLD
+========================= */
+
+.app {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 20% 15%, #713653 0%, transparent 28%),
+        radial-gradient(circle at 80% 40%, #4c1830 0%, transparent 35%),
+        linear-gradient(160deg, #431d35, #210913 75%);
+}
+
+/* Pixel stars */
+
+.stars {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.star {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background: #f9dbe9;
+    opacity: .7;
+    box-shadow: 0 0 5px #f9dbe9;
+}
+
+.s1 { left: 12%; top: 12%; }
+.s2 { left: 52%; top: 17%; }
+.s3 { left: 87%; top: 21%; }
+.s4 { left: 21%; top: 35%; }
+.s5 { left: 73%; top: 38%; }
+.s6 { left: 44%; top: 48%; }
+.s7 { left: 8%; top: 61%; }
+.s8 { left: 91%; top: 64%; }
+.s9 { left: 32%; top: 73%; }
+.s10 { left: 68%; top: 81%; }
+.s11 { left: 17%; top: 88%; }
+.s12 { left: 84%; top: 90%; }
+
+/* Floating flowers */
+
+.flower {
+    position: absolute;
+    font-size: 25px;
+    opacity: .6;
+    animation: floatFlower 7s ease-in-out infinite;
+}
+
+.f1 { top: 13%; left: 68%; }
+.f2 { top: 20%; left: 38%; animation-delay: 2s; }
+.f3 { top: 55%; left: 90%; animation-delay: 4s; }
+
+@keyframes floatFlower {
+    0%,100% { transform: translateY(0) rotate(0); }
+    50% { transform: translateY(-12px) rotate(8deg); }
+}
+
+/* =========================
+   SCREENS
+========================= */
+
+.screen {
+    position: absolute;
+    inset: 0;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 35px 25px 90px;
+    text-align: center;
+    animation: screenIn .5s ease;
+}
+
+.screen.active {
+    display: flex;
+}
+
+@keyframes screenIn {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================
+   PIXEL CAT
+========================= */
+
+.cat-frame {
+    width: 150px;
+    height: 150px;
+    background: #130c13;
+    border: 5px solid #f5a1c3;
+    box-shadow:
+        0 0 0 5px #48132d,
+        0 8px 0 #1b0712,
+        0 0 25px rgba(255,80,150,.35);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    image-rendering: pixelated;
+    margin-bottom: 35px;
+    position: relative;
+}
+
+.cat-frame::before {
+    content: "";
+    position: absolute;
+    inset: 7px;
+    border: 2px solid #f8d4e4;
+    opacity: .8;
+}
+
+.cat {
+    width: 95px;
+    height: 95px;
+    position: relative;
+}
+
+/* Pixel cat body */
+
+.cat-head {
+    position: absolute;
+    width: 58px;
+    height: 48px;
+    background: #edf8f5;
+    left: 18px;
+    top: 22px;
+    border: 4px solid #222;
+}
+
+.cat-head::before,
+.cat-head::after {
+    content: "";
+    position: absolute;
+    top: -15px;
+    width: 25px;
+    height: 25px;
+    background: #edf8f5;
+    border-top: 4px solid #222;
+}
+
+.cat-head::before {
+    left: -4px;
+    transform: rotate(45deg);
+}
+
+.cat-head::after {
+    right: -4px;
+    transform: rotate(-45deg);
+}
+
+.eye {
+    position: absolute;
+    width: 5px;
+    height: 8px;
+    background: #222;
+    top: 20px;
+}
+
+.eye.left { left: 14px; }
+.eye.right { right: 14px; }
+
+.nose {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background: #d86b91;
+    left: 25px;
+    top: 31px;
+}
+
+.mouth {
+    position: absolute;
+    left: 20px;
+    top: 35px;
+    width: 18px;
+    height: 7px;
+    border-bottom: 3px solid #222;
+    border-radius: 0 0 50% 50%;
+}
+
+.cat-body {
+    position: absolute;
+    width: 40px;
+    height: 33px;
+    background: #edf8f5;
+    border: 4px solid #222;
+    left: 27px;
+    top: 65px;
+}
+
+.paw {
+    position: absolute;
+    width: 14px;
+    height: 15px;
+    background: #edf8f5;
+    border: 3px solid #222;
+    bottom: -8px;
+}
+
+.paw.left { left: -7px; }
+.paw.right { right: -7px; }
+
+.tail {
+    position: absolute;
+    width: 25px;
+    height: 30px;
+    border: 5px solid #edf8f5;
+    border-left: 0;
+    border-radius: 0 20px 20px 0;
+    right: 8px;
+    bottom: 5px;
+}
+
+/* =========================
+   TYPOGRAPHY
+========================= */
+
+.kicker {
+    font-size: 13px;
+    letter-spacing: 4px;
+    color: #d99ab4;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-family: "DM Serif Display", serif;
+    font-size: clamp(42px, 11vw, 70px);
+    line-height: 1;
+    margin: 0 0 25px;
+}
+
+h2 {
+    font-family: "DM Serif Display", serif;
+    font-size: clamp(31px, 8vw, 48px);
+    line-height: 1.1;
+    margin: 0 0 18px;
+}
+
+p {
+    color: #e5bacb;
+    font-size: 18px;
+    line-height: 1.55;
+    max-width: 500px;
+    margin: 8px auto;
+}
+
+/* =========================
+   PIXEL BUTTONS
+========================= */
+
+.buttons {
+    width: 100%;
+    max-width: 420px;
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+    margin-top: 30px;
+}
+
+button {
+    border: 0;
+    font-family: "Press Start 2P", monospace;
+    cursor: pointer;
+}
+
+.main-btn {
+    width: 100%;
+    padding: 20px 18px;
+    border-radius: 40px;
+    background: linear-gradient(135deg,#f05b91,#c73868);
+    color: #17030c;
+    font-size: 13px;
+
+    box-shadow:
+        0 5px 0 #751938,
+        0 10px 30px rgba(240,80,140,.3);
+
+    transition: transform .15s;
+}
+
+.main-btn:active {
+    transform: translateY(4px);
+    box-shadow: 0 1px 0 #751938;
+}
+
+.option {
+    padding: 17px;
+    background: #351325;
+    color: #ffdce9;
+    border: 2px solid #9e456b;
+    box-shadow: 0 4px 0 #170710;
+}
+
+.option:active {
+    transform: translateY(3px);
+}
+
+.option.selected {
+    background: #e74c83;
+    color: white;
+}
+
+/* =========================
+   PIXEL LANDSCAPE
+========================= */
+
+.landscape {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 145px;
+    pointer-events: none;
+}
+
+.mountain {
+    position: absolute;
+    bottom: 35px;
+    width: 0;
+    height: 0;
+    border-left: 130px solid transparent;
+    border-right: 130px solid transparent;
+    border-bottom: 100px solid #69244b;
+}
+
+.m1 { left: -50px; }
+.m2 { left: 30%; bottom: 25px; }
+.m3 { right: -80px; bottom: 15px; }
+
+.city {
+    position: absolute;
+    bottom: 28px;
+    left: 0;
+    right: 0;
+    height: 70px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 5px;
+}
+
+.building {
+    width: 25px;
+    background: #743054;
+    border-top: 3px solid #b65a7f;
+}
+
+.b1 { height: 40px; }
+.b2 { height: 65px; }
+.b3 { height: 50px; }
+.b4 { height: 80px; }
+.b5 { height: 45px; }
+.b6 { height: 60px; }
+.b7 { height: 35px; }
+
+.ground {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 32px;
+    background: #b92d69;
+    border-top: 5px dotted #ef7eaa;
+}
+
+/* =========================
+   PROGRESS
+========================= */
+
+.progress {
+    position: absolute;
+    bottom: 28px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 20;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    background: #523044;
+    border-radius: 50%;
+}
+
+.dot.active {
+    background: #ed5186;
+    width: 13px;
+    border-radius: 8px;
+}
+
+/* =========================
+   FINAL
+========================= */
+
+.final-cat {
+    animation: heartbeat 1.5s infinite;
+}
+
+@keyframes heartbeat {
+    0%,100% { transform: scale(1); }
+    50% { transform: scale(1.06); }
+}
+
+.summary {
+    width: 100%;
+    max-width: 450px;
+    max-height: 220px;
+    overflow-y: auto;
+    background: rgba(35,7,21,.7);
+    border: 1px solid #85405e;
+    padding: 15px;
+    text-align: left;
+    margin-top: 15px;
+}
+
+.summary div {
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255,255,255,.08);
+    color: #f4cadb;
+    font-size: 14px;
+}
+
+textarea {
+    width: 100%;
+    max-width: 430px;
+    height: 120px;
+    margin-top: 20px;
+    background: #230b19;
+    border: 2px solid #9e456b;
+    color: white;
+    padding: 15px;
+    font-size: 16px;
+    resize: none;
+    outline: none;
+}
+
+textarea::placeholder {
+    color: #a8758d;
+}
+
+/* hearts */
+
+.heart {
+    position: absolute;
+    font-size: 22px;
+    animation: heartFloat 5s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes heartFloat {
+    from {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+    20% { opacity: 1; }
+    to {
+        transform: translateY(-20vh);
+        opacity: 0;
+    }
+}
+
+@media(max-height:700px) {
+    .cat-frame {
+        width: 115px;
+        height: 115px;
+        margin-bottom: 18px;
+    }
+
+    .screen {
+        padding-top: 20px;
+    }
+
+    h1 {
+        font-size: 42px;
+    }
+
+    h2 {
+        font-size: 30px;
+    }
+
+    .buttons {
+        margin-top: 15px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="app">
+
+    <div class="stars">
+        <div class="star s1"></div>
+        <div class="star s2"></div>
+        <div class="star s3"></div>
+        <div class="star s4"></div>
+        <div class="star s5"></div>
+        <div class="star s6"></div>
+        <div class="star s7"></div>
+        <div class="star s8"></div>
+        <div class="star s9"></div>
+        <div class="star s10"></div>
+        <div class="star s11"></div>
+        <div class="star s12"></div>
+    </div>
+
+    <div class="flower f1">🌸</div>
+    <div class="flower f2">🌸</div>
+    <div class="flower f3">🌷</div>
+
+    <!-- =====================
+         SCREEN 1
+    ====================== -->
+
+    <section class="screen active" data-screen="0">
+
+        <div class="cat-frame">
+            <div class="cat">
+                <div class="cat-head">
+                    <span class="eye left"></span>
+                    <span class="eye right"></span>
+                    <span class="nose"></span>
+                    <span class="mouth"></span>
+                </div>
+
+                <div class="cat-body">
+                    <div class="paw left"></div>
+                    <div class="paw right"></div>
+                </div>
+
+                <div class="tail"></div>
+            </div>
+        </div>
+
+        <div class="kicker">A LITTLE SOMETHING FOR LULU</div>
+
+        <h1>Hey Lulu 🌙❤️</h1>
+
+        <h2>I made something for you...</h2>
+
+        <p>Give me a few minutes 😭</p>
+
+        <div class="buttons">
+            <button class="main-btn" onclick="nextScreen()">
+                Okay, show me 👀
+            </button>
+        </div>
+
+    </section>
+
+
+    <!-- =====================
+         SCREEN 2
+    ====================== -->
+
+    <section class="screen" data-screen="1">
+
+        <div class="cat-frame">
+            <div class="cat">
+                <div class="cat-head">
+                    <span class="eye left"></span>
+                    <span class="eye right"></span>
+                    <span class="nose"></span>
+                    <span class="mouth"></span>
+                </div>
+                <div class="cat-body">
+                    <div class="paw left"></div>
+                    <div class="paw right"></div>
+                </div>
+                <div class="tail"></div>
+            </div>
+        </div>
+
+        <div class="kicker">BE HONEST 👀</div>
+
+        <h2>When you see my name...</h2>
+
+        <div class="buttons">
+
+            <button class="option"
+                onclick="choose('firstFeeling','I smile a little 😌')">
+                I smile a little 😌
+            </button>
+
+            <button class="option"
+                onclick="choose('firstFeeling','I get curious 👀')">
+                I get curious 👀
+            </button>
+
+            <button class="option"
+                onclick="choose('firstFeeling','Depends on the day 😂')">
+                Depends on the day 😂
+            </button>
+
+            <button class="option"
+                onclick="choose('firstFeeling','I pretend I did not see it 😭')">
+                I pretend I didn't see it 😭
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================
+         SCREEN 3
+    ====================== -->
+
+    <section class="screen" data-screen="2">
+
+        <div class="kicker">ONE MORE THING 🌷</div>
+
+        <h2>What do you think of me?</h2>
+
+        <p>Don't overthink it. Just choose what feels closest. ❤️</p>
+
+        <div class="buttons">
+
+            <button class="option"
+                onclick="choose('opinion','You are cute 🥹')">
+                You are cute 🥹
+            </button>
+
+            <button class="option"
+                onclick="choose('opinion','You are interesting 👀')">
+                You are interesting 👀
+            </button>
+
+            <button class="option"
+                onclick="choose('opinion','You are kinda crazy 😂')">
+                You are kinda crazy 😂
+            </button>
+
+            <button class="option"
+                onclick="choose('opinion','I am still figuring you out 🌙')">
+                Still figuring you out 🌙
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================
+         SCREEN 4
+    ====================== -->
+
+    <section class="screen" data-screen="3">
+
+        <div class="kicker">JUST IMAGINE...</div>
+
+        <h2>If we went on a date 🌷</h2>
+
+        <p>What would you choose?</p>
+
+        <div class="buttons">
+
+            <button class="option"
+                onclick="choose('date','Coffee & talking ☕')">
+                Coffee & talking ☕
+            </button>
+
+            <button class="option"
+                onclick="choose('date','Dinner somewhere pretty 🍝')">
+                Dinner somewhere pretty 🍝
+            </button>
+
+            <button class="option"
+                onclick="choose('date','A random adventure 🌙')">
+                A random adventure 🌙
+            </button>
+
+            <button class="option"
+                onclick="choose('date','Anything as long as the company is good ❤️')">
+                Anything with good company ❤️
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================
+         SCREEN 5
+    ====================== -->
+
+    <section class="screen" data-screen="4">
+
+        <div class="cat-frame">
+            <div class="cat">
+                <div class="cat-head">
+                    <span class="eye left"></span>
+                    <span class="eye right"></span>
+                    <span class="nose"></span>
+                    <span class="mouth"></span>
+                </div>
+                <div class="cat-body">
+                    <div class="paw left"></div>
+                    <div class="paw right"></div>
+                </div>
+                <div class="tail"></div>
+            </div>
+        </div>
+
+        <div class="kicker">OKAY... NOW ME ❤️</div>
+
+        <h2>I actually like you, Lulu.</h2>
+
+        <p>
+            I don't know exactly where this goes,
+            but I know I'd like to take the time
+            to know you better.
+        </p>
+
+        <p>So... I have one question.</p>
+
+        <div class="buttons">
+
+            <button class="main-btn"
+                onclick="nextScreen()">
+                I'm listening 👀
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================
+         SCREEN 6 — PROPOSAL
+    ====================== -->
+
+    <section class="screen" data-screen="5">
+
+        <div class="cat-frame final-cat">
+            <div class="cat">
+                <div class="cat-head">
+                    <span class="eye left"></span>
+                    <span class="eye right"></span>
+                    <span class="nose"></span>
+                    <span class="mouth"></span>
+                </div>
+                <div class="cat-body">
+                    <div class="paw left"></div>
+                    <div class="paw right"></div>
+                </div>
+                <div class="tail"></div>
+            </div>
+        </div>
+
+        <div class="kicker">HERE GOES NOTHING 🥹</div>
+
+        <h2>Will you go out with me? ❤️</h2>
+
+        <p>
+            No pressure. I just wanted to ask you properly. 🌷
+        </p>
+
+        <div class="buttons">
+
+            <button class="main-btn"
+                onclick="finalAnswer('YES ❤️')">
+                YES ❤️
+            </button>
+
+            <button class="option"
+                onclick="finalAnswer('MAYBE 🌙')">
+                MAYBE 🌙
+            </button>
+
+            <button class="option"
+                onclick="finalAnswer('I NEED SOME TIME 🥹')">
+                I NEED SOME TIME 🥹
+            </button>
+
+            <button class="option"
+                onclick="finalAnswer('NO ❤️')">
+                NO ❤️
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================
+         SCREEN 7 — MESSAGE
+    ====================== -->
+
+    <section class="screen" data-screen="6">
+
+        <div class="kicker">ONE LAST THING 💌</div>
+
+        <h2>Tell me anything...</h2>
+
+        <p>
+            You can leave me a little message if you want. ❤️
+        </p>
+
+        <textarea
+            id="message"
+            placeholder="Write something for Hun... 🌷"></textarea>
+
+        <div class="buttons">
+
+            <button class="main-btn"
+                onclick="finishProposal()">
+                Finish this little journey 💗
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================
+         SCREEN 8 — SUMMARY
+    ====================== -->
+
+    <section class="screen" data-screen="7">
+
+        <div class="kicker">LULU'S ANSWERS 💌</div>
+
+        <h2>So... this is what you chose 🥹</h2>
+
+        <div class="summary" id="summary"></div>
+
+        <div class="buttons">
+
+            <button class="main-btn"
+                onclick="sendWhatsApp()">
+                Send this to Hun on WhatsApp 💌
+            </button>
+
+        </div>
+
+        <p style="font-size:12px;margin-top:15px;">
+            Your answers won't be sent anywhere until you tap the button above ❤️
+        </p>
+
+    </section>
+
+
+    <!-- LANDSCAPE -->
+
+    <div class="landscape">
+
+        <div class="mountain m1"></div>
+        <div class="mountain m2"></div>
+        <div class="mountain m3"></div>
+
+        <div class="city">
+            <div class="building b1"></div>
+            <div class="building b2"></div>
+            <div class="building b3"></div>
+            <div class="building b4"></div>
+            <div class="building b5"></div>
+            <div class="building b6"></div>
+            <div class="building b7"></div>
+        </div>
+
+        <div class="ground"></div>
+
+    </div>
+
+
+    <!-- PROGRESS -->
+
+    <div class="progress" id="progress">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+    </div>
+
+</div>
+
+
+<script>
+
+/* =====================================
+   LULU'S ANSWERS
+===================================== */
+
+const answers = {
+    firstFeeling: "",
+    opinion: "",
+    date: "",
+    finalAnswer: "",
+    message: ""
+};
+
+
+/* =====================================
+   SCREEN SYSTEM
+===================================== */
+
+let currentScreen = 0;
+
+const screens = document.querySelectorAll(".screen");
+const dots = document.querySelectorAll(".dot");
+
+function showScreen(number) {
+
+    screens.forEach((screen, index) => {
+        screen.classList.toggle("active", index === number);
+    });
+
+    dots.forEach((dot, index) => {
+        dot.classList.toggle("active", index === number);
+    });
+
+    currentScreen = number;
+
+    window.scrollTo(0,0);
+}
+
+
+/* =====================================
+   NEXT
+===================================== */
+
+function nextScreen() {
+
+    if (currentScreen < screens.length - 1) {
+        showScreen(currentScreen + 1);
+    }
+}
+
+
+/* =====================================
+   SAVE ANSWER
+===================================== */
+
+function choose(question, answer) {
+
+    answers[question] = answer;
+
+    nextScreen();
+}
+
+
+/* =====================================
+   FINAL ANSWER
+===================================== */
+
+function finalAnswer(answer) {
+
+    answers.finalAnswer = answer;
+
+    nextScreen();
+}
+
+
+/* =====================================
+   FINISH
+===================================== */
+
+function finishProposal() {
+
+    answers.message =
+        document.getElementById("message").value.trim();
+
+    if (!answers.message) {
+        answers.message = "She didn't leave a message.";
+    }
+
+    createSummary();
+
+    showScreen(7);
+}
+
+
+/* =====================================
+   SUMMARY
+===================================== */
+
+function createSummary() {
+
+    const summary = document.getElementById("summary");
+
+    summary.innerHTML = `
+
+        <div>
+            💗 <strong>When she sees your name:</strong><br>
+            ${escapeHTML(answers.firstFeeling || "Not answered")}
+        </div>
+
+        <div>
+            🌷 <strong>What she thinks of you:</strong><br>
+            ${escapeHTML(answers.opinion || "Not answered")}
+        </div>
+
+        <div>
+            ☕ <strong>Her date choice:</strong><br>
+            ${escapeHTML(answers.date || "Not answered")}
+        </div>
+
+        <div>
+            💌 <strong>Her answer:</strong><br>
+            ${escapeHTML(answers.finalAnswer || "Not answered")}
+        </div>
+
+        <div>
+            🥹 <strong>Her message:</strong><br>
+            ${escapeHTML(answers.message || "Not answered")}
+        </div>
+
+    `;
+}
+
+
+/* =====================================
+   SECURITY FOR TEXT
+===================================== */
+
+function escapeHTML(text) {
+
+    return text
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+}
+
+
+/* =====================================
+   WHATSAPP
+===================================== */
+
+function sendWhatsApp() {
+
+    const message =
+
+`Hey Hun ❤️ I finished your little proposal 🥹🌷
+
+Here’s what I chose:
+
+💗 When I see your name:
+${answers.firstFeeling || "Not answered"}
+
+🌷 What I think of you:
+${answers.opinion || "Not answered"}
+
+☕ My date choice:
+${answers.date || "Not answered"}
+
+💌 My answer:
+${answers.finalAnswer || "Not answered"}
+
+🥹 My message for you:
+${answers.message || "Not answered"}
+
+— Lulu ❤️`;
+
+    const whatsappURL =
+        "https://wa.me/917673962811?text=" +
+        encodeURIComponent(message);
+
+    window.location.href = whatsappURL;
+}
+
+
+/* =====================================
+   FLOATING HEARTS
+===================================== */
+
+function createHeart() {
+
+    const heart = document.createElement("div");
+
+    heart.className = "heart";
+
+    const hearts = ["❤️","💕","💗","💖","🌸","✨"];
+
+    heart.innerText =
+        hearts[Math.floor(Math.random() * hearts.length)];
+
+    heart.style.left =
+        Math.random() * 100 + "%";
+
+    heart.style.animationDuration =
+        (4 + Math.random() * 4) + "s";
+
+    heart.style.fontSize =
+        (15 + Math.random() * 18) + "px";
+
+    document.querySelector(".app").appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 8000);
+}
+
+setInterval(createHeart, 900);
+
+</script>
+
+</body>
+</html>
